@@ -1,0 +1,133 @@
+Running with gitlab-runner 17.5.2 (c6eae8d7)
+  on www TKsBTTyzJ, system ID: s_fef75b14ee59
+Preparing the "docker" executor
+00:37
+Using Docker executor with image docker:20.10.5 ...
+Starting service docker:20.10.5-dind...
+Pulling docker image docker:20.10.5-dind ...
+Using docker image sha256:0a9822c8848df3eb0a1562e553fdd54215939ef0a528434ee026c64ff645148c for docker:20.10.5-dind with digest docker@sha256:e4ecd4e9ad5140d584669451b05e406d8cf7603e51972b862178ad93c38b2b08 ...
+Waiting for services to be up and running (timeout 30 seconds)...
+*** WARNING: Service runner-tksbttyzj-project-1-concurrent-0-e747858c4e8d0cd8-docker-0 probably didn't start properly.
+Health check error:
+service "runner-tksbttyzj-project-1-concurrent-0-e747858c4e8d0cd8-docker-0-wait-for-service" timeout
+Health check container logs:
+2024-10-30T12:24:32.320167079Z waiting for TCP connection to 172.17.0.2 on [2375 2376]...
+2024-10-30T12:24:32.320319160Z dialing 172.17.0.2:2375...
+2024-10-30T12:24:32.320688787Z dialing 172.17.0.2:2376...
+2024-10-30T12:24:33.321116077Z dialing 172.17.0.2:2375...
+2024-10-30T12:24:33.321259068Z dialing 172.17.0.2:2376...
+2024-10-30T12:24:34.321555884Z dialing 172.17.0.2:2375...
+2024-10-30T12:24:34.321672072Z dialing 172.17.0.2:2376...
+Service container logs:
+2024-10-30T12:24:31.766459681Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2024-10-30T12:24:32.127847684Z ..............................................................................++++
+2024-10-30T12:24:32.585799630Z ..........................................................................................................++++
+2024-10-30T12:24:32.586300134Z e is 65537 (0x010001)
+2024-10-30T12:24:32.602726332Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2024-10-30T12:24:32.836342115Z ..............................................................++++
+2024-10-30T12:24:33.040952924Z .......................................................++++
+2024-10-30T12:24:33.041471322Z e is 65537 (0x010001)
+2024-10-30T12:24:33.074770341Z Signature ok
+2024-10-30T12:24:33.074798243Z subject=CN = docker:dind server
+2024-10-30T12:24:33.075075070Z Getting CA Private Key
+2024-10-30T12:24:33.089042905Z /certs/server/cert.pem: OK
+2024-10-30T12:24:33.093460381Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2024-10-30T12:24:33.414953465Z ......................................................................................++++
+2024-10-30T12:24:33.484997033Z .................++++
+2024-10-30T12:24:33.485505007Z e is 65537 (0x010001)
+2024-10-30T12:24:33.514370861Z Signature ok
+2024-10-30T12:24:33.514394741Z subject=CN = docker:dind client
+2024-10-30T12:24:33.514399609Z Getting CA Private Key
+2024-10-30T12:24:33.527319401Z /certs/client/cert.pem: OK
+2024-10-30T12:24:33.582330037Z time="2024-10-30T12:24:33.582141078Z" level=info msg="Starting up"
+2024-10-30T12:24:33.584036256Z time="2024-10-30T12:24:33.583841972Z" level=warning msg="could not change group /var/run/docker.sock to docker: group docker not found"
+2024-10-30T12:24:33.584057688Z failed to load listeners: can't create unix socket /var/run/docker.sock: device or resource busy
+*********
+Pulling docker image docker:20.10.5 ...
+Using docker image sha256:1588477122de4fdfe9fcb9ddeeee6ac6b93e9e05a65c68a6e22add0a98b8e0fe for docker:20.10.5 with digest docker@sha256:7ed427295687586039ff3433bb9b4419c5cf1e6294025dadf7641126665a78f5 ...
+Preparing environment
+00:01
+Running on runner-tksbttyzj-project-1-concurrent-0 via compute-vm-2-4-20-hdd-1730210623831...
+Getting source from Git repository
+00:01
+Fetching changes with git depth set to 20...
+Reinitialized existing Git repository in /builds/root/netology-stady/.git/
+Checking out 0b1f1ff6 as detached HEAD (ref is main)...
+Skipping Git submodules setup
+Executing "step_script" stage of the job script
+00:05
+Using docker image sha256:1588477122de4fdfe9fcb9ddeeee6ac6b93e9e05a65c68a6e22add0a98b8e0fe for docker:20.10.5 with digest docker@sha256:7ed427295687586039ff3433bb9b4419c5cf1e6294025dadf7641126665a78f5 ...
+$ echo "$TOKEN" | docker login --username oauth --password-stdin cr.yandex
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+Login Succeeded
+$ docker build -t cr.yandex/$REG/$IMAGE_NAME .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:7af27ecace090b8649952fb86b3f62a3ca9aa59b2f30a8768ec56ab711300081
+#1 transferring dockerfile: 580B done
+#1 DONE 0.2s
+#2 [internal] load metadata for docker.io/library/centos:7
+#2 sha256:f41b9f0c61f16cb469657058bb2337847adac0efe5e81a5123b6bf1a55b6db20
+#2 DONE 0.9s
+#3 [internal] load .dockerignore
+#3 sha256:2d20df1509889d3ce82edbcb81db87f876ac25f33e21da7cf3c57757918f0509
+#3 transferring context: 2B done
+#3 DONE 0.2s
+#6 [1/8] FROM docker.io/library/centos:7@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
+#6 sha256:8aee2df8eae94a334b616b2360efaff20c8e0722b9e9251907e0264f86e84fe1
+#6 DONE 0.0s
+#12 [internal] load build context
+#12 sha256:f17df7bdbd9208a5422571bc33349271dbceac6eba2588ee78071288722fd3eb
+#12 transferring context: 507B done
+#12 DONE 0.2s
+#5 [2/8] RUN sed -i 's|mirrorlist=|#mirrorlist=|g' /etc/yum.repos.d/CentOS-*.repo &&     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*.repo
+#5 sha256:7df5230f107a1ec4e32c8be06a5692161fb6a34bc4094cffe4ada802318e8771
+#5 CACHED
+#4 [3/8] RUN yum -y update &&     yum install -y python3 python3-pip curl &&     yum clean all
+#4 sha256:3f5b075fcd83765ef6582b3a29b914d55b515a291cbfe36b5688d8a9533b05e4
+#4 CACHED
+#11 [4/8] COPY requirements.txt /tmp/requirements.txt
+#11 sha256:9859f2944ac3e11d57cd0144933d24b33a2d06cf328b7cbf13845f7787c78a89
+#11 CACHED
+#10 [5/8] RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
+#10 sha256:54f3f2d0f8f536f4382ef390e194f8d9fd06fd79065c202f48eae080b000ee58
+#10 CACHED
+#9 [6/8] RUN mkdir -p /python_api
+#9 sha256:1877bdeee12039bb1bed4353c701fc01e34253f6bb803bbd91c179a59615c443
+#9 CACHED
+#8 [7/8] COPY python-api.py /python_api/python-api.py
+#8 sha256:df13931d0f185526f1f8d9028a24aef3cd243bb5efbb53c30fa0eab296db9e5c
+#8 CACHED
+#7 [8/8] WORKDIR /python_api
+#7 sha256:9e4cab653197c0b53c387b45063f98b974f047d52fba1a452a7b7bfb7219764d
+#7 CACHED
+#13 exporting to image
+#13 sha256:5afc8b3830c26733c21d03cd67ac62260936ed1e98ef84dfe816e55cae4a8f7e
+#13 exporting layers done
+#13 writing image sha256:b44896de924bcecfabdacb148364aecb9b80ebb957cdfa88e3da015def5b5c91 0.0s done
+#13 naming to cr.yandex/crpg3mt19snt1gpprat5/hello:gitlab-0b1f1ff6 0.0s done
+#13 DONE 0.1s
+$ docker push cr.yandex/$REG/$IMAGE_NAME
+The push refers to repository [cr.yandex/crpg3mt19snt1gpprat5/hello]
+5f70bf18a086: Preparing
+fdc4580a13c1: Preparing
+0ea484e0047d: Preparing
+216961ffe057: Preparing
+7e5aa453bc7f: Preparing
+e5ff2c606981: Preparing
+5c7b9ffc7dd6: Preparing
+174f56854903: Preparing
+e5ff2c606981: Waiting
+5c7b9ffc7dd6: Waiting
+174f56854903: Waiting
+0ea484e0047d: Layer already exists
+5f70bf18a086: Layer already exists
+7e5aa453bc7f: Layer already exists
+216961ffe057: Layer already exists
+174f56854903: Layer already exists
+5c7b9ffc7dd6: Layer already exists
+e5ff2c606981: Layer already exists
+fdc4580a13c1: Pushed
+gitlab-0b1f1ff6: digest: sha256:3269b861c72f85224bb76d5c6eb18cdca53de94e04df3904b8628f109b5a0446 size: 1987
+Job succeeded
