@@ -1,18 +1,5 @@
 # Домашнее задание к занятию 12 «GitLab»
 
-## Подготовка к выполнению
-
-
-1. Или подготовьте к работе Managed GitLab от yandex cloud [по инструкции](https://cloud.yandex.ru/docs/managed-gitlab/operations/instance/instance-create) .
-Или создайте виртуальную машину из публичного образа [по инструкции](https://cloud.yandex.ru/marketplace/products/yc/gitlab ) .
-2. Создайте виртуальную машину и установите на нее gitlab runner, подключите к вашему серверу gitlab  [по инструкции](https://docs.gitlab.com/runner/install/linux-repository.html) .
-
-3. (* Необязательное задание повышенной сложности. )  Если вы уже знакомы с k8s попробуйте выполнить задание, запустив gitlab server и gitlab runner в k8s  [по инструкции](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/gitlab-containers). 
-
-4. Создайте свой новый проект.
-5. Создайте новый репозиторий в GitLab, наполните его [файлами](./repository).
-6. Проект должен быть публичным, остальные настройки по желанию.
-
 ## Основная часть
 
 ### DevOps
@@ -25,7 +12,9 @@
 4. Создана директория `/python_api`.
 5. Скрипт из репозитория размещён в /python_api.
 6. Точка вызова: запуск скрипта.
-7. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.   
+7. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.
+
+   ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/1.png)
 
 ### Product Owner
 
@@ -35,6 +24,8 @@
 2. Текст с `{ "message": "Already started" }` на `{ "message": "Running"}`.
 3. Issue поставить label: feature.
 
+   ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/2.png)
+
 ### Developer
 
 Пришёл новый Issue на доработку, вам нужно:
@@ -43,6 +34,10 @@
 2. Внести изменения по тексту из задания.
 3. Подготовить Merge Request, влить необходимые изменения в `master`, проверить, что сборка прошла успешно.
 
+  ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/3.png)
+  ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/4.png)
+  ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/5.png)
+  ![img](https://github.com/SeNike/Study_24/blob/main/GitLab/6.png)
 
 ### Tester
 
@@ -50,6 +45,8 @@
 
 1. Поднять докер-контейнер с образом `python-api:latest` и проверить возврат метода на корректность.
 2. Закрыть Issue с комментарием об успешности прохождения, указав желаемый результат и фактически достигнутый.
+
+![img](https://github.com/SeNike/Study_24/blob/main/GitLab/2.png)
 
 ## Итог
 
