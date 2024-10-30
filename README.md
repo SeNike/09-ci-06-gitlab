@@ -52,7 +52,7 @@
 
 В качестве ответа пришлите подробные скриншоты по каждому пункту задания:
 
-- файл gitlab-ci.yml;
+- файл [gitlab-ci.yml](https://github.com/SeNike/09-ci-06-gitlab/blob/main/.gitlab-ci.yml);
 - Dockerfile; 
 - [лог успешного выполнения пайплайна](https://github.com/SeNike/09-ci-06-gitlab/blob/main/pipeline.log);
 - решённый Issue.
