@@ -54,7 +54,7 @@
 
 - файл gitlab-ci.yml;
 - Dockerfile; 
-- лог успешного выполнения пайплайна;
+- [лог успешного выполнения пайплайна](https://github.com/SeNike/09-ci-06-gitlab/blob/main/pipeline.log);
 - решённый Issue.
 
 ### Важно 
