@@ -1,0 +1,27 @@
+stages:
+  - build
+  - deploy
+
+image: docker:20.10.5
+
+services:
+  - docker:20.10.5-dind
+
+variables:
+  IMAGE_NAME: "hello:gitlab-$CI_COMMIT_SHORT_SHA"  
+
+builder:
+  stage: build
+  script:
+    - docker build -t $IMAGE_NAME .
+  except:
+    - main
+
+deployer:
+  stage: deploy
+  script:
+    - echo "$TOKEN" | docker login --username oauth --password-stdin cr.yandex
+    - docker build -t cr.yandex/$REG/$IMAGE_NAME .
+    - docker push cr.yandex/$REG/$IMAGE_NAME
+  only:
+    - main
